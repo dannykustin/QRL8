@@ -1,0 +1,141 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" />
+	<style>
+		/*overall Container*/
+		
+		.container {
+			background-color: #4a4a4a;
+			margin: 30px;
+			padding: 1vw;
+			width: 40vw;
+			transition: all ease-in-out 1s;
+		}
+		/*each checkbox*/
+		
+		.pretty {
+			color: #484848;
+			margin: 4px;
+			padding: inherit;
+			background-color: #ddd;
+		}
+		/*
+		[:::Watch this:::]		
+		There some boilier Plate Code that's needed to put the Check box back next to the label*/
+		
+		label {
+			transform: translate(0%, 0%);
+
+		}
+		/*Result Box*/
+		
+		#result {
+			text-align: center;
+			color: greenyellow;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="pretty  p-pulse">
+			<input type="checkbox" checked/>
+			<div class="state p-success">
+				<label id="checkID1"> Check 1</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" />
+			<div class="state p-success">
+				<label id="checkID2"> Check 2</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" checked/>
+			<div class="state p-success">
+				<label id="checkID3"> Check 3: What if the button has a huge amount of content? What happens then? Are you sure this is okay? I'd expect it to wrap soon...</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" />
+			<div class="state p-success">
+				<label id="checkID4"> Check 4</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" />
+			<div class="state p-success">
+				<label id="checkID5"> Check 5</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" checked/>
+			<div class="state p-success">
+				<label id="checkID6"> Check 6</label>
+			</div>
+		</div>
+		<div class="pretty  p-pulse">
+			<input type="checkbox" checked />
+			<div class="state p-success">
+				<label id="checkID7"> Check 7</label>
+			</div>
+		</div>
+		<div class="pretty p-toggle p-pulse">
+			<input type="checkbox" checked/>
+			<div class="state p-on p-success">
+				<label id="checkID8"> Check 8</label>
+			</div>
+			<div class="state p-off p-info">
+				<!-- shouldn't need the id since the first label must always supply it -->
+				<label> Can't Check 8</label>
+			</div>
+		</div>
+		<div id="result">
+			<p>These Check boxes are checked:</p>
+		</div>
+	</div>
+	<script src="JS/jquery-2.2.1.min.js"></script>
+	<script>
+		var testOBJ = {
+			checkID1: false
+			, checkID2: false
+			, checkID3: false
+			, checkID4: false
+			, checkID5: false
+			, checkID6: false
+			, checkID7: false
+			, checkID8: false
+		}
+
+		function ingestCheckBoxData(obj) {
+			var out = "";
+			//ARRAY OF ALL CHKBOXES
+			var chkboxes = $('input[type="checkbox"]'); // array of all checkbox elements
+			//console.log(chkboxes);
+			//FOR EACH IN ARRAY
+			for (var i = 0; i < chkboxes.length; i++) {
+				//console.log($(chkboxes[i]).next(".state").children("label").attr("id"));
+				//IF CHECKED
+				if (chkboxes[i].checked) {
+					//DO SOMETHING. Also can access the id of the label with: $(chkboxes[i]).next(".state").children("label").attr("id")
+					obj[$(chkboxes[i]).next(".state").children("label").attr("id")] = true;
+					out += $(chkboxes[i]).next(".state").children("label").attr("id") + ",  ";
+				} else {
+					obj[$(chkboxes[i]).next(".state").children("label").attr("id")] = false;
+				}
+			}
+			//formating before printing to page.
+			return out.slice(0, -3);
+			//console.log(out);
+		}
+		$("body").click(function () {
+			var out = ingestCheckBoxData(testOBJ);
+			$("#result").html("<p>These Check boxes are checked: " + out + "</p>");
+			console.log(testOBJ);
+		});
+	</script>
+</body>
+
+</html>

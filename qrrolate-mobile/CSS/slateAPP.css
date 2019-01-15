@@ -1,0 +1,265 @@
+/*General Stuff*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+
+ body{
+	 font-family: 'Roboto', sans-serif;
+	 background-color: #333333;
+} 
+input{
+	background-color: #333333;
+	color: #ffffff;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.bg-white{
+	background-color: #ffffff;
+}
+html,
+body,
+#slatePart,
+#slateForm,
+.slateFields,
+#sriptSupPart {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
+
+/*Sets the slate Top*/
+
+.slateTop {
+	grid-column: span 4;
+	/*background-color: black;*/
+	background-image: url(../Images/SlatePattern.svg);
+	background-size: 15% 100%;
+	background-position: 0%;
+	background-repeat: repeat-x;
+}
+
+
+/*customizes the slate field*/
+
+.slateFields {
+	display: grid;
+/*	justify-content: center;*/
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 24% 30% 13% 13% 20%;
+}
+
+
+/* Make sure all inputs conform to grid-specified dimensions */
+
+.slateFields input {
+/*	width: auto;*/
+/*	height: auto;*/
+	border-style: inset;
+	border-color: #00F900;
+
+}
+
+.takeBox {
+	background-color: #333;
+	color: #00F900;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 20% 60% 20%;
+}
+
+.takeBox #take, #sceneNumber, #shotLetter {
+	font-size: 400%;
+}
+
+.takeBox button{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+	background: none;
+    color: inherit;
+    border: none;
+    padding: 2px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+.long-field {
+	grid-column: span 2;
+}
+
+
+/*customizes the AD field*/
+
+#sriptSupPart {
+	padding: 2%;
+	display: grid;
+	grid-template-columns: 30% 30% 30%;
+	grid-gap: 4%;
+	grid-template-rows: 85% 5%;
+	/*	font-size: 2vw;*/
+	/*	font-weight: bold;*/
+	justify-content: center;
+}
+
+
+/*
+#sriptSupPart input{
+	width: auto;
+	height: auto;
+}
+*/
+
+input {
+	border-radius: 0;
+}
+
+
+/*custimizes the tag on the AD field*/
+
+.grid-span-all {
+/*		grid-column: span 3;*/
+}
+
+.pretty {
+	max-width: 33vw;
+	margin: 1vh;
+	padding: 1vh 3vh 1vh 1vh;
+	
+
+	background-color: #ddd;
+	 word-wrap: break-word;
+	transition: all ease-in-out 1s;
+}
+
+
+/*
+[:::Watch this:::]		
+There some boilier Plate Code that's needed to put the Check box back next to the label*/
+
+label {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	/* text-overflow: clip;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto; */
+/*
+	-ms-word-break: break-all;
+     word-break: break-all;     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+*/
+	transform: translate(0%, 0%);
+}
+
+
+.commonTagsField {
+	/* display: grid;
+	justify-content: center;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 9% 30% 30% 30%;
+	grid-gap: 1%;
+	font-weight: bold; */
+	background-color: #888;
+	overflow: auto;
+}
+
+
+
+/*
+.dynamicSize{
+   width: 300px;
+    height: 300px;
+}
+*/
+
+
+/*Styles the buttons to be elegent*/
+
+.customButton {
+	padding: 3vh;
+	text-decoration: none;
+	display: inline-block;
+	/* font-size: 16px; */
+	border-radius: 2px;
+	line-height: 100%;
+	font-weight: bold;
+
+}
+#backButton,#secondSticks{
+	background-color: #eee;
+	color: #000;
+}
+#finishShoot{
+	background-color: #444;
+	color: #fff;}
+/*
+.tagButton {
+	padding: 7px 7px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 2vw;
+	border-radius: 2px;
+}
+*/
+
+
+/*Sets the QR code top*/
+
+#qrcode1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/*
+#sriptSupPart{
+	display: none;
+}
+*/
+
+
+/*Centers Placeholder*/
+
+::-webkit-input-placeholder {
+	text-align: center;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	text-align: center;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	text-align: center;
+}
+
+:-ms-input-placeholder {
+	text-align: center;
+}
+
+/*
+input {
+	text-align: center;
+}
+*/

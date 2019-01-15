@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<!--Creates a Title in the tab so the user knows what they are looking at-->
+    <title>QRrelate</title>
+    <!--Imports the font to jsed on the webpage-->
+    <link href='https://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100' rel='stylesheet' type='text/css'>
+    <!--Bootsttap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
+
+    <!--Imports CCS-->
+    <link href="CSS/slateAPP.css" type="text/css" rel="stylesheet" />
+    <!--Creates the grey background-->
+	
+	<link rel="manifest" href="/manifest.webmanifest">
+</head>
+
+<body>
+    <div id="slatePart">
+        <!--Create the basic slate inputs-->
+        <form id="slateForm">
+            <div class="slateFields">
+                <div class="slateTop" id="slateTop">
+                    <div id="callSlate"></div>
+                    <div id="forFocus"></div>
+                </div>
+                <input type="text" id="card" placeholder="Card" value="Mike's A">
+                <input type="number" pattern="[0-9]*" id="sceneNumber" placeholder="Scene Number" value="06">
+                <input type="text" id="shotLetter" placeholder="Shot Letter" value="F'">
+                <div class="takeBox">
+					<button type="button" id="decrease" >-</button>
+                    <input type="number" pattern="[0-9]*" id="take" placeholder="Take">
+					<button type="button" id="increase" >+</button>
+                </div>
+                <input type="text" name="productionName" id="productionName" class="long-field" placeholder="Production Name">
+                <input type="text" name="productionComp" id="productionCompany" class="long-field" placeholder="Production Company">
+                <input type="text" id="director" name="director" class="long-field" placeholder="Director" value="Best Director">
+                <input type="text" id="camera" name="camera" class="long-field" placeholder="Camera">
+                <input type="text" name="description" id="description" class="long-field" placeholder="Description">
+                <input type="date" name="date" id="date" class="long-field">
+            </div>
+        </form>
+    </div>
+
+    <!--Places for the QR code to appear-->
+    <div id="qrcode1" class="center"></div>
+<!--    <div id="qrcode2" class="center"></div>-->
+            <div id="sriptSupPart">
+                <input type="text" id="videoNotes" placeholder="Video Notes">
+                <input type="text" id="audioNotes" placeholder="Audio Notes">
+
+                <div class="commonTagsField">
+                    <!--Common Tags Title-->
+                    <h3 class="center grid-span-all">Common Tags</h3>
+                <div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="cameraDeadroll" />
+                    <div class="state p-on p-success">
+                        <label > Camera Deadroll</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Camera Deadroll</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="messedUpLine"/>
+                    <div class="state p-on p-success">
+                        <label> Messed Up Line</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Messed Up Line</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="greatActing" />
+                    <div class="state p-on p-success">
+                        <label> Great Acting</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Great Acting</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="badFocus"/>
+                    <div class="state p-on p-success">
+                        <label> Bad Focus</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Bad Focus</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="lockedOff" />
+                    <div class="state p-on p-success">
+                        <label>Locked Off</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Locked Off</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="badCameraMovement" />
+                    <div class="state p-on p-success">
+                        <label>Bad Camera Movement</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label>Bad Camera Movement</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="goodCameraMovement"/>
+                    <div class="state p-on p-success">
+                        <label> Great Camera Movement</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label> Great Camera Movement</label>
+                    </div>
+                </div><div class="pretty p-toggle p-pulse">
+                    <input type="checkbox" id="circleTake" />
+                    <div class="state p-on p-success">
+                        <label> Circle Take</label>
+                    </div>
+                    <div class="state p-off p-failure">
+                        <label> Circle Take</label>
+                    </div>
+                </div>
+<!-- </div>
+    <button class="tagButton">Camera Deadroll</button>
+                    <button class="tagButton">Audio Deadroll</button>
+                    <button class="tagButton">Messed Up Line</button>
+                    <button class="tagButton">Great Acting</button>
+                    <button class="tagButton">Bad Focus</button>
+                    <button class="tagButton">Locked Off</button>
+                    <button class="tagButton">Bad Camera Movement</button>
+                    <button class="tagButton">Great Camera Movement</button>
+                    <button class="tagButton">Circle Take</button> -->
+
+
+                </div>
+
+           
+
+
+        <!--Creates Buttons on bottom of Script Sup Form-->
+        <button id="backButton" class="customButton">Cut</button>
+
+        <button id="finishShoot" class="customButton">Finish Shoot</button>
+        <button id="secondSticks" class="customButton">Second Sticks</button>
+
+	 </div>
+    <!--Imports the javascript-->
+    <!--Regular jquery-->
+    <script src="JS/jquery-2.2.1.min.js"></script>
+    <!--QR code jquery plugIn-->
+    <script src="JS/jquery.qrcode.min.js"></script>
+    <!-- Input fit jquery plugIn-->
+<!--    <script src="JS/jquery.fittext.js"></script>-->
+    <!--Custom js file-->
+    <script src="JS/slateApp.js"></script>
+</body>
+
+</html>

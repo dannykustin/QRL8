@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<style>
+		.input {
+			font-family: monospace;
+			background-color: black;
+			color: limegreen;
+			height: 230px;
+			padding: 1em;
+			margin: 2em;
+			overflow-y: scroll;
+			transition: all 0.3s ease-in-out;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>This is a test page to see how JSON and CSV plays!</h1>
+	<div id="json" class="input">{ "id":"0001", "card" : "Jeremy's Card", "sceneNumber" : "14", "shotLetter" : "B", "take" : "3", "productionName" : "Testing, the Test!", "productionCompany" : "Qrl8 Productions", "director" : "Devan Rosen", "camera" : "A", "description" : "Long Shot", "date" : "05/20/2018", "videoNotes" : "Ugly, but we tried", "audioNotes" : "Sounds good to me", "cameraDeadroll" : false, "messedUpLine" : false, "greatActing" : true, "badFocus" : false, "lockedOff" : false, "badCameraMovement" : false, "goodCameraMovement" : false, "circleTake" : true } </div>
+	<div id="csv" class="input"> </div>
+	<button onclick="addShot2DB()">Add Shot to DataBase</button>
+	<button onclick="makeCSV('shots')">Save CSV!!!</button>
+	<script src="JS/jquery-2.2.1.min.js"></script>
+	<script src="JS/jeremy-csv-test.js"></script>
+</body>
+
+</html>

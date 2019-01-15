@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 179 136" xml:space="preserve">
+<title>SlatePattern</title>
+<g>
+	<polygon fill="#FFFFFF" points="157,68 90,136 0,136 67,68 0,0 90,0 	"/>
+	<polygon fill="#333333" points="0,0 0,136 67,68 	"/>
+	<polygon fill="#333333" points="90,0 157,68 90,136 179,136 179,0 	"/>
+	<line fill="none" stroke="#888888" stroke-miterlimit="10" x1="179" y1="68" x2="0" y2="68"/>
+</g>
+</svg>
