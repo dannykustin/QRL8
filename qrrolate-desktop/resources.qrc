@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tada.wav</file>
+    </qresource>
+</RCC>
